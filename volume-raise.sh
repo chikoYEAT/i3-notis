@@ -8,3 +8,10 @@ else
     notify-send "Volume Level" "Failed to retrieve volume information"
 fi
 
+# Mute
+amixer sget Master | grep -q '\[off\]'
+if [ $? -eq 0 ]; then
+    notify-send "Audio is Muted"
+else
+	notify-send "Audio UnMuted"
+fi
