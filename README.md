@@ -1,11 +1,16 @@
-## i3-notis
-Alsa volume notification keybindings for i3
+# i3-notis
+Alsa volume notification keybindings for i3 / brightness Control
 
 ## Requirements
-`notify-send`,`dunst`
+`notify-send`,`dunst`,`light`
 
 ## Procedure
 - download that script file i.e to $HOME
+- `chmod +x light.sh` and `chmod +x volume-raise.sh`
+<br/>
+
+- add `bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1 && /home/imanav10/light.sh # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 && /home/imanav10/light.sh  # decrease screen brightness` and
 - add `bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && /home/imanav10/volume-raise.sh && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && /home/imanav10/volume-raise.sh #decrease sound volume && pkill -RTMIN+10 i3blocks
 ` to `~/.config/i3/config`
