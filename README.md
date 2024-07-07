@@ -2,7 +2,7 @@
 Alsa volume notification keybindings for i3
 
 ## Requirements
-`notify-send`
+`notify-send`,`dunst`
 
 ## Procedure
 - download that script file i.e to $HOME
